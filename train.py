@@ -9,7 +9,7 @@ def train(train_iter, dev_iter, model, args):
     if args.cuda:
         model.cuda()
 
-    optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
+    optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=0.004)
 
     steps = 0
     best_acc = 0
